@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jibhi Homestead Cabins - Escape to Nature</title>
+    <meta name="description" content="Experience authentic mountain living in our cozy cabins nestled in the Himalayas. Book your peaceful retreat today.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Jibhi Homestead Cabins</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="https://maps.app.goo.gl/tMnpTJdYghE7MQj48">Maps</a></li>
+            <li><a href="rooms.html">Cabins</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://api.whatsapp.com/message/BWWKG2RKE6HUJ1?autoload=1&app_absent=0&fbclid=PAQ0xDSwK0FIxleHRuA2FlbQIxMAABpymN8KWDLYDGTGAkyho5fdIPN19JGfG0Pop_Zmvxnhnis6dS8lrU5fokyinJ_aem_7NFUJGQxMaGQSNsJbBt6nA" class="book-now-btn">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-slideshow">
+                <!-- Add your images here - replace with your actual image paths -->
+                <div class="hero-slide active" style="background-image: url('hero-image1.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('hero-image2.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('hero-image3.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('hero-image4.jpg');"></div>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Find Your Mountain Escape</h1>
+                <p>Authentic wooden cabins surrounded by pine forests in the heart of Jibhi</p>
+                <a href="https://api.whatsapp.com/message/BWWKG2RKE6HUJ1?autoload=1&app_absent=0&fbclid=PAQ0xDSwK0FIxleHRuA2FlbQIxMAABpymN8KWDLYDGTGAkyho5fdIPN19JGfG0Pop_Zmvxnhnis6dS8lrU5fokyinJ_aem_7NFUJGQxMaGQSNsJbBt6nA" class="cta-button">Book Your Stay</a>
+            </div>
+            <button class="slide-nav prev" onclick="changeSlide(-1)">❮</button>
+        <button class="slide-nav next" onclick="changeSlide(1)">❯</button>
+
+        <!-- Optional: Slide indicators -->
+        <div class="slide-indicators">
+            <span class="indicator active" onclick="currentSlide(1)"></span>
+            <span class="indicator" onclick="currentSlide(2)"></span>
+            <span class="indicator" onclick="currentSlide(3)"></span>
+            <span class="indicator" onclick="currentSlide(4)"></span>
+        </div>
+        </section>
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="container">
+                <h2>Welcome to Jibhi Homestead</h2>
+                <div class="welcome-content">
+                    <div class="welcome-text">
+                        <p>Nestled in the majestic Himalayas, our cabins offer the perfect blend of rustic charm and modern comfort. Wake up to birdsong, breathe in the fresh mountain air, and experience true tranquility.</p>
+                        <p>Each cabin is handcrafted using local materials and designed to give you an authentic mountain living experience while providing all the comforts you need.</p>
+                        <a href="about.html" class="text-link">Learn more about us →</a>
+                    </div>
+                    <div class="welcome-image">
+                        <img src="cabin-exterior.jpg" alt="Wooden cabin with mountain view" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Cabins -->
+        <section class="featured-cabins">
+            <div class="container">
+                <h2>Our Cabins</h2>
+                <p class="section-subtitle">Choose your perfect mountain retreat</p>
+                
+                <div class="cabins-grid">
+                    <div class="cabin-card">
+                        <img src="images/cabin-1.jpg" alt="Forest View Cabin" loading="lazy">
+                        <h3>Forest View Cabin</h3>
+                        <p>Cozy cabin with panoramic forest views and a private balcony</p>
+                        <a href="rooms.html#forest-view" class="card-link">View Details</a>
+                    </div>
+                    
+                    <div class="cabin-card">
+                        <img src="images/cabin-2.jpg" alt="Mountain View Cabin" loading="lazy">
+                        <h3>Mountain View Cabin</h3>
+                        <p>Spacious cabin with breathtaking mountain vistas</p>
+                        <a href="rooms.html#mountain-view" class="card-link">View Details</a>
+                    </div>
+                    
+                    <div class="cabin-card">
+                        <img src="images/cabin-3.jpg" alt="Riverside Cabin" loading="lazy">
+                        <h3>Riverside Cabin</h3>
+                        <p>Serene cabin by the flowing river with private access</p>
+                        <a href="rooms.html#riverside" class="card-link">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="center-button">
+                    <a href="rooms.html" class="cta-button secondary">View All Cabins</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience-section">
+            <div class="container">
+                <h2>Your Himalayan Experience</h2>
+                <div class="experience-grid">
+                    <div class="experience-item">
+                        <i class="fas fa-tree"></i>
+                        <h3>Nature Immersion</h3>
+                        <p>Surrounded by ancient forests with nature trails right at your doorstep</p>
+                    </div>
+                    <div class="experience-item">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Local Cuisine</h3>
+                        <p>Authentic Himachali meals prepared with locally-sourced ingredients</p>
+                    </div>
+                    <div class="experience-item">
+                        <i class="fas fa-campfire"></i>
+                        <h3>Bonfire Nights</h3>
+                        <p>Evening bonfires under the stars with fellow travelers</p>
+                    </div>
+                    <div class="experience-item">
+                        <i class="fas fa-hiking"></i>
+                        <h3>Guided Treks</h3>
+                        <p>Explore hidden trails with our experienced local guides</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>Guest Experiences</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The most peaceful place I've ever stayed. Waking up to the sound of birds and the view of misty mountains was magical."</p>
+                        <div class="guest-info">
+                            <strong>- Priya M.</strong>
+                            <span>New Delhi</span>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The cabin was cozy and had everything we needed. The staff went above and beyond to make our anniversary special."</p>
+                        <div class="guest-info">
+                            <strong>- Raj & Anita</strong>
+                            <span>Mumbai</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-button">
+                    <a href="reviews.html" class="text-link">Read more reviews →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready for Your Mountain Getaway?</h2>
+                <p>Book your cabin today and experience the magic of Jibhi</p>
+                <div class="cta-buttons">
+                    <a href="https://api.whatsapp.com/message/BWWKG2RKE6HUJ1?autoload=1&app_absent=0&fbclid=PAQ0xDSwK0FIxleHRuA2FlbQIxMAABpymN8KWDLYDGTGAkyho5fdIPN19JGfG0Pop_Zmvxnhnis6dS8lrU5fokyinJ_aem_7NFUJGQxMaGQSNsJbBt6nA" class="cta-button">Book Now</a>
+                    <a href="contact.html" class="cta-button secondary">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Jibhi Homestead Cabins</h3>
+                    <p>Providing authentic mountain experiences since 2024. Our mission is to help guests reconnect with nature while supporting the local community.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="rooms.html">Rooms</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <a href="https://maps.app.goo.gl/tMnpTJdYghE7MQj48"><i class="fas fa-map-marker-alt"></i> Village Jibhi, District Kullu, Himachal Pradesh</a>
+                    <p></p>
+                    <a href="tel:+919805311711"><i class="fas fa-phone"></i> Call Us</a>
+                    <p><i class="fas fa-envelope"></i> cabinsjibhihomestead@gmail.com</p>
+                    <a href="https://www.instagram.com/jibhihomesteadcabins/?igsh=MTU5bmkzdTFvdngzdQ%3D%3D#" ><i class="fab fa-instagram"></i>@jibhihomesteadcabins</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jibhi Homestead Cabins. All rights reserved.</p>
+                
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
