@@ -630,7 +630,10 @@ body {
     font-size: 24px;
     font-weight: bold;
     color: #e8c07d; /* Gold color */
-    font-family: 'ShockWave', serif;
+    font-family: 'Shockwave';
+    src: url('Shockwave.ttf') format('truetype')
+    font-style: normal;
+    
 }
 
 .nav-links {
