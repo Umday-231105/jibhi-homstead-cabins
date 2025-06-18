@@ -5,7 +5,576 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jibhi Homestead Cabins - Escape to Nature</title>
     <meta name="description" content="Experience authentic mountain living in our cozy cabins nestled in the Himalayas. Book your peaceful retreat today.">
-    <link rel="stylesheet" href="about_styles.css">
+    <style>
+        /* Reset some default styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            padding-top: 70px;
+        }
+
+        /* Navbar styles */
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+        }   
+        .navbar {
+            background-color: #2c3e1a; /* Dark blue color */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Montserrat';
+        }
+        @font-face {
+            font-family: 'Birthstone';
+            src: url('Birthstone/Birthstone-Regular.ttf') format('truetype');
+        }   
+
+
+
+        .logo {
+            font-size: 45px;
+            font-weight: bold;
+            color: #e8c07d; /* Gold color */
+            font-family: 'Birthstone';
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #e8c07d; /* Gold color on hover */
+        }
+
+        .book-now-btn {
+            background-color: #e8c07d; /* Gold color */
+            color: #1a2a3a !important; /* Dark blue text */
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .book-now-btn:hover {
+            background-color: #d4b06d;
+            color: #1a2a3a;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #2c3e1a;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Button Styles */
+        .cta-button {
+            display: inline-block;
+            background-color: #f8d56b;
+            color: #2c3e1a;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        .cta-button:hover {
+            background-color: #e5c45d;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            border: 2px solid #f8d56b;
+            color: #2c3e1a;
+        }
+
+        .cta-button.secondary:hover {
+            background-color: #f8d56b;
+        }
+
+        /* New Content Sections */
+        .hero-about {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('aboutherosection.jpg') center/cover;
+            background-attachment: fixed;
+            height: 60vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-about h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-about p {
+            color: white;
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .content-grid.reverse {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .content-grid.reverse .content-text {
+            order: 2;
+        }
+
+        .content-grid.reverse .content-image {
+            order: 1;
+        }
+
+        .content-text h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .content-text h3 {
+            color: #f8d56b;
+            margin-bottom: 15px;
+        }
+
+        .content-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .content-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .content-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #e8f5e8, #c5e1c5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c3e1a;
+            font-size: 1.2rem;
+            border: 2px dashed #2c3e1a;
+            border-radius: 10px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #f8d56b, #e8c07d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: #2c3e1a;
+        }
+
+       .testimonial-section {
+            background-color: #2c3e1a;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .testimonial-section h2 {
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            color: #f8d56b;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .stars {
+            color: #f8d56b;
+            font-size: 1.2rem;
+        }
+
+        .review-source {
+            font-size: 0.9rem;
+            color: #ddd;
+            opacity: 0.8;
+        }
+        .google-reviews-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #e8c07d; /* Gold color */
+    color: #1a2a3a !important;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    
+
+    .google-reviews-btn:hover {
+        background-color: #d4b06d;
+            color: #1a2a3a;
+    }
+
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background-color: #f9f5e8;
+            padding: 80px 0;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #555;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2c3e1a;
+            color: white;
+            padding: 60px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+
+        .footer p, .footer li {
+            color: #ddd;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #f8d56b;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: #f8d56b;
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Mobile menu styles */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .content-grid.reverse .content-text,
+            .content-grid.reverse .content-image {
+                order: initial;
+            }
+            
+            .hero-about h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 15px;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero-about {
+                height: 60vh;
+                min-height: 400px;
+            }
+            
+            .hero-about h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-about p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons a {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-about h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-about p {
+                font-size: 1rem;
+            }
+            
+            .content-image img,
+            .image-placeholder {
+                height: 250px;
+            }
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -27,6 +596,165 @@
         </ul>
     </nav>
 
+    <!-- Hero Section -->
+    <section class="hero-about">
+        <div class="container">
+            <h1>About Jibhi Homestead Cabins</h1>
+            <p>Discover our story of bringing authentic mountain hospitality to the heart of Himachal Pradesh</p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <h2>Our Story</h2>
+                    <h3>A Dream Born in the Mountains</h3>
+                    <p>Nestled in the serene valley of Jibhi, our homestead began as a dream to create a sanctuary where travelers could experience the authentic beauty of Himalayan life. Founded in 2024, Jibhi Homestead Cabins represents our commitment to sustainable tourism and genuine hospitality.</p>
+                    <p>Every cabin tells a story of local craftsmanship, built using traditional techniques passed down through generations. We believe in preserving the natural beauty of our surroundings while providing modern comfort to our guests.</p>
+                    <p>Our journey started with a simple vision: to offer weary travelers a place where they can reconnect with nature, experience local culture, and create memories that last a lifetime.</p>
+                </div>
+                <div class="content-image">
+                    <!-- Replace with your actual image -->
+                    <div class="image-placeholder">
+                        [Add your story/founder image here]<br>
+                        Recommended: 600x400px
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid reverse">
+                <div class="content-text">
+                    <h2>Our Mission</h2>
+                    <h3>Sustainable Tourism & Community Support</h3>
+                    <p>We are dedicated to promoting responsible tourism that benefits both our guests and the local community. Our mission extends beyond providing accommodation – we strive to be stewards of the environment and supporters of local traditions.</p>
+                    <p>Every stay with us contributes to the local economy. We source our materials locally, employ residents from nearby villages, and support local artisans and farmers. This approach ensures that tourism becomes a force for positive change in our community.</p>
+                    <p>Our commitment to sustainability includes eco-friendly practices, waste reduction, and preserving the natural ecosystem that makes Jibhi so special.</p>
+                </div>
+                <div class="content-image">
+                    <!-- Replace with your actual image -->
+                    <div class="image-placeholder">
+                        [Add community/sustainability image here]<br>
+                        Recommended: 600x400px
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes Us Special Section -->
+    <section class="content-section">
+    <div class="container">
+        <h2>What Makes Us Special</h2>
+        <p class="section-subtitle">Experience the difference of authentic mountain hospitality</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <h3>Natural Tree House Cabins</h3>
+                <p>Wake up nestled in the tree cabins with birdsong and crisp mountain air all around. Our natural treehouse cabins offer a magical escape, blending comfort with wild serenity.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <h3>Hammock Bed</h3>
+                <p>The Hammock bed provides a charming view of lush green cedar trees with chirping sound of birds and murmurings of the river.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Candle Light Dinner</h3>
+                <p>The wild candle light dinner deck offers a magical escape amidst towering pines and fresh mountain air.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Location & Surroundings Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <h2>Our Location</h2>
+                    <h3>Gateway to Himalayan Adventures</h3>
+                    <p>Strategically located in Village Jibhi, Kullu District, we offer the perfect base for exploring the hidden gems of Himachal Pradesh. Our location provides easy access to pristine forests, crystal-clear streams, and breathtaking mountain vistas.</p>
+                    <p>Within walking distance, you'll find the famous Jibhi Waterfall, ancient temples, and traditional villages where time seems to stand still. The area is perfect for nature walks, photography, fishing, and simply soaking in the tranquil mountain atmosphere.</p>
+                    <p>We're conveniently accessible by road while maintaining the secluded feel that makes mountain retreats so special.</p>
+                </div>
+                <div class="content-image">
+                    <!-- Replace with your actual image -->
+                    <div class="image-placeholder">
+                        [Add location/landscape image here]<br>
+                        Recommended: 600x400px
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guest Testimonials Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <h2>What Our Guests Say</h2>
+            <div class="testimonials-grid">
+                <!-- Replace these with your actual Google reviews -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "When you meet the finest hosts, your trip turns into an exceptional experience. They offer one of the best property stays you'll ever have! Come and feel at home with them! #HomeAwayFromHome ❤️❤️"
+                    </div>
+                    <div class="testimonial-author">- Prateek Bansal</div>
+                    <div class="testimonial-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="review-source">Google Reviews</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The stay was very comfortable in the beautiful treehouse, with amazing food and amenities.
+Will definitely visit again"
+                    </div>
+                    <div class="testimonial-author">- Prarthana Mohan, </div>
+                    <div class="testimonial-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="review-source">Google Reviews</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Super host. Great property. Great rooms. Great view. Great food.
+Stayed there for 3 days, felt like second home.
+Ayush is a superhost, will go to extents to make sure you have a comfortable stay."
+                    </div>
+                    <div class="testimonial-author">- Mehul Jain </div>
+                    <div class="testimonial-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="review-source">Google Reviews</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Google Reviews Button -->
+            <a href="https://www.google.com/travel/hotels/entity/CgoIwI_uzfvkt6kaEAE/reviews?q=jibhi%20homestead%20cabin%20and%20tree%20house&g2lb=4965990%2C4969803%2C72277293%2C72302247%2C72317059%2C72414906%2C72471280%2C72472051%2C72481459%2C72485658%2C72560029%2C72573224%2C72601598%2C72616120%2C72647020%2C72648289%2C72686036%2C72760082%2C72803964%2C72832976%2C72882230%2C72885032%2C72941410%2C72946003%2C72958594%2C72958624%2C72959982%2C72963671%2C72978495%2C72991410&hl=en-IN&gl=in&cs=1&ssta=1&ts=CAEaSQorEicyJTB4MzkwNWFmNjk5YTdjNjEwNToweDFhNTJkZjI3YjliYjg3YzAaABIaEhQKBwjpDxAGGBUSBwjpDxAGGBYYATICEAAqBAoAGgA&qs=CAE4AkIJCcCHu7kn31IaQgkJwIe7uSffUho&ictx=111&utm_campaign=sharing&utm_medium=link&utm_source=htls" class="google-reviews-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-google"></i>
+                Read All Reviews on Google
+            </a>
+        </div>
+    </section>
     <!-- Call to Action -->
     <section class="cta-section">
         <div class="container">
@@ -39,40 +767,76 @@
         </div>
     </section>
 
-
     <footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-about">
-                <h3>Jibhi Homestead Cabins</h3>
-                <p>Providing authentic mountain experiences since 2024. Our mission is to help guests reconnect with nature while supporting the local community.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Jibhi Homestead Cabins</h3>
+                    <p>Providing authentic mountain experiences since 2024. Our mission is to help guests reconnect with nature while supporting the local community.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="rooms.html">Rooms</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <a href="https://maps.app.goo.gl/tMnpTJdYghE7MQj48"><i class="fas fa-map-marker-alt"></i> Village Jibhi, District Kullu, Himachal Pradesh</a>
+                    <p></p>
+                    <a href="tel:+919805311711"><i class="fas fa-phone"></i> Call Us</a>
+                    <p><i class="fas fa-envelope"></i> cabinsjibhihomestead@gmail.com</p>
+                    <a href="https://www.instagram.com/jibhihomesteadcabins/?igsh=MTU5bmkzdTFvdngzdQ%3D%3D#"><i class="fab fa-instagram"></i>@jibhihomesteadcabins</a>
+                </div>
             </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="rooms.html">Rooms</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <a href="https://maps.app.goo.gl/tMnpTJdYghE7MQj48"><i class="fas fa-map-marker-alt"></i> Village Jibhi, District Kullu, Himachal Pradesh</a>
-                <p></p>
-                <a href="tel:+919805311711"><i class="fas fa-phone"></i> Call Us</a>
-                <p><i class="fas fa-envelope"></i> cabinsjibhihomestead@gmail.com</p>
-                <a href="https://www.instagram.com/jibhihomesteadcabins/?igsh=MTU5bmkzdTFvdngzdQ%3D%3D#" ><i class="fab fa-instagram"></i>@jibhihomesteadcabins</a>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jibhi Homestead Cabins. All rights reserved.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Jibhi Homestead Cabins. All rights reserved.</p>
-            
-            </div>
-         </div>
     </footer>
-    <script src="main.js"></script>
 
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .testimonial-card, .content-grid').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
