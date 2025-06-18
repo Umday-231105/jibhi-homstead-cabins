@@ -609,16 +609,13 @@ body {
     font-family: 'Arial', sans-serif;
     padding-top: 70px;
 }
+@font-face {
+    font-family: 'Birthstone';
+    src: url('Birthstone/Birthstone-Regular.ttf') format('truetype');
+}   
+
 
 /* Navbar styles */
-@font-face { 
-    font-family: 'Montserrat';
-    src: url('Montserrat-VariableFont_wght.ttf') format('truetype')
-}
-@font-face { 
-    font-family: 'Merienda';
-    src: url('Merienda-VariableFont_wght.ttf') format('truetype')
-}
 .navbar {
     background-color: #2c3e1a; /* Dark blue color */
     color: white;
@@ -634,17 +631,25 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     font-family: 'Montserrat';
 }
+.logo-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            object-fit:none;            
+        }
 
 .logo {
-    font-size: 24px;
+    font-size: 45px;
     font-weight: bold;
     color: #e8c07d; /* Gold color */
-    font-family: 'Shockwave';
-    src: url('Shockwave.ttf') format('truetype')
-    font-style: normal;
-    font-family: 'Merienda' ;
+    font-family: 'Birthstone' ;
+
     
 }
+ @font-face {
+  font-family: 'Montserrat';
+  src: url('Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+    }
 
 .nav-links {
     display: flex;
